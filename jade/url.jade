@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  main
+    .container
+      .row
+        .col-md-6.offset-md-3
+          h1 Upload Success
+          p The upload completed successfully. A link to your file is displayed below:
+          .url
+            a(href='/file/#{meta}') #{meta}
+            span.badge.pull-right#time(data-time='#{date}')
+          .return
+            a(href='/') /
+
+block append scripts
+  script(src='/js/time.js')
