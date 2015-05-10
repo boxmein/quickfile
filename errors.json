@@ -1,4 +1,6 @@
 {
   "NO_SPACE": "the storage service is over capacity! please give it a minute to clear out...",
-  "INVALID_REQUEST": "the %request request vas invalid."
+  "INVALID_REQUEST": "the %request request vas invalid.",
+  "NOT_FOUND": "This file was not found.",
+  "INTERNAL": "Internal Server Error :("
 }
