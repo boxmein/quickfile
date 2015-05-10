@@ -1,13 +1,16 @@
 # simple makefile to reduce rendering load on node
 HTML_PRE = public/index.html
-CSS_PRE  = public/css/style.css
-JS_PRE   = public/js/index.js
-JS_DIR   = js/
+CSS_PRE	= public/css/style.css
+JS_PRE	 = public/js/index.js public/js/time.js
+JS_DIR	 = js/
 BOOTSTRAP = public/bower_components/bootstrap
 
-.PHONY: all
+.PHONY: all clean
 
 all: $(HTML_PRE) $(CSS_PRE) $(BOOTSTRAP) $(JS_PRE)
+
+clean:
+	rm uploads/*
 
 public/%.html: jade/%.jade
 	jade $< -o $(dir $@)
@@ -19,4 +22,4 @@ public/js/%.js: js/%.js
 	uglifyjs -c -o $@ $<
 
 public/bower_components/bootstrap:
-  bower install bootstrap
+	bower install bootstrap
