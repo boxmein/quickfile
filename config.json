@@ -1,0 +1,5 @@
+{
+  "max_files": 100,
+  "delete_timeout": 65000,
+  "store_metadata": true
+}

@@ -1,0 +1,4 @@
+{
+  "NO_SPACE": "the storage service is over capacity! please give it a minute to clear out...",
+  "INVALID_REQUEST": "the %request request vas invalid."
+}
