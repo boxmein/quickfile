@@ -1,8 +1,14 @@
 doctype html
 html
   head
-    title= title
+    title quickfile - quickly share a file from anywhere
     meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='simple uploader with strong constraints usable to quickly share a file')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap-theme.min.css')
     link(rel='stylesheet', href='/css/style.css')
   body
     block content
+    block scripts
+      script(src='bower_components/jquery/dist/jquery.min.js')
+      script(src='bower_components/bootstrap/dist/js/bootstrap-theme.min.js')
