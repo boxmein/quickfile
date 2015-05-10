@@ -2,13 +2,39 @@ extends layout
 
 block content
   header
-    h1 quickfile
-    p quick and ephemeral file host
+    .container
+      .row
+        .col-md-6.col-md-offset-3
+          h1 quickfile
+          p quick and ephemeral file host
   main
-    p.
-      Use this site to quickly share small files with friends or coworkers.
-      The upload will be deleted after 10 minutes.
-    form(action='/upload', method='POST', enctype='multipart/form-data')
-      input(type='file' name='uploadFile')
-      button(type='submit') Submit
-    script(src='/js/index.js')
+    .container
+      .row
+        .col-md-6.col-md-offset-3
+          p.
+            Use this site to quickly share small files with friends or coworkers.
+            The upload will be deleted after <strong>10 minutes</strong>.
+
+          h2 Upload
+
+          .alert.alert-danger#err_filesize(style='display: none')
+            p The file is too big! Uploads are limited to 1 MB.
+          .alert.alert-danger#err_empty(style='display: none')
+            p You haven't specified a file! Pick a file or drag one into the page.
+
+          form(action='/upload', method='POST', enctype='multipart/form-data')
+            .form-group
+              label(for='uploadFile').
+                Select a file for uploading. You may also drag a file onto this
+                window.
+              input#uploadFile.form-control(type='file' name='uploadFile')
+            .form-group
+              button#uploadSubmit.btn.btn-primary(type='submit') Submit
+
+          progress.progress(style='display:none')
+  footer
+    a(href='https://github.com/boxmein/quickfile') Source
+
+
+block append scripts
+  script(src='/js/index.js')
