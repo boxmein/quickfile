@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  header
+    h1 quickfile
+    p quick and ephemeral file host
+  main
+    p.
+      Use this site to quickly share small files with friends or coworkers.
+      The upload will be deleted after 10 minutes.
+    form(action='/upload', method='POST', enctype='multipart/form-data')
+      input(type='file' name='uploadFile')
+      button(type='submit') Submit
+    script(src='/js/index.js')
